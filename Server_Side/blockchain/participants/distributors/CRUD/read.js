@@ -8,7 +8,7 @@ let read = function(req, res)
     tracing.create('ENTER', 'GET blockchain/participants/distributors', {});
 
     if(!participants.participants_info.hasOwnProperty('distributors'))
-    {
+	{
         res.status(404);
         let error = {};
         error.message = 'Unable to retrieve distributors';
@@ -17,10 +17,9 @@ let read = function(req, res)
         res.send(error);
     }
     else
-    {
+	{
         tracing.create('EXIT', 'GET blockchain/participants/distributors', {'result':participants.participants_info.distributors});
         res.send({'result':participants.participants_info.distributors});
     }
-
 };
 exports.read = read;

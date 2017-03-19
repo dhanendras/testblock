@@ -8,9 +8,9 @@ var read = function(req, res)
 {
 	participants = reload(__dirname+'/../../participants_info.js');
 	tracing.create('ENTER', 'GET blockchain/participants/miners', {});
-		for (var key in participants) {
+		for (var key in participants.participants_info) {
   
-    console.log(key + " -> " );
+    console.log(key + " -> " +participants.participants_info[key]);
   
 }
 	if(!participants.participants_info.hasOwnProperty('miners'))
